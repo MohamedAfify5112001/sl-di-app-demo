@@ -12,6 +12,5 @@ final class InjectorNetworkServicesIntoDataSource {
     _postDataSource = PostDataSourceImplementation(instance<NetworkServices>());
   }
 
-  Future<List<PostModel>> getAllPosts() async =>
-      await _postDataSource.getAllPosts();
+
 }

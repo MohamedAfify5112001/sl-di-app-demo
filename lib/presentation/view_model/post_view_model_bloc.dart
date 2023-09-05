@@ -7,6 +7,7 @@ import 'package:equatable/equatable.dart';
 import '../../domain/entities/post_entity.dart';
 
 part 'post_view_model_event.dart';
+
 part 'post_view_model_state.dart';
 
 class PostViewModelBloc extends Bloc<PostViewModelEvent, PostViewModelState> {
@@ -19,7 +20,7 @@ class PostViewModelBloc extends Bloc<PostViewModelEvent, PostViewModelState> {
     emit(LoadingFetchAllPostsState());
     final getPostUseCase = InjectorPostRepositoryIntoPostUseCase.inject();
     try {
-      final posts = await getPostUseCase.getAllPosts();
+      final posts = await getPostUseCase.postUseCase();
       emit(SuccessFetchAllPostsState(posts));
     } catch (error) {
       emit(FailedFetchAllPostsState());

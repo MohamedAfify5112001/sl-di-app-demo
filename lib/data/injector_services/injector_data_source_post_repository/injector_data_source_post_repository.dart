@@ -15,6 +15,4 @@ final class InjectorDataSourceIntoPostRepository {
         postDataSource: getPostDataSource.postDataSource);
   }
 
-  Future<List<PostEntity>> getAllPosts() async =>
-      await _postRepository.getAllPosts();
 }

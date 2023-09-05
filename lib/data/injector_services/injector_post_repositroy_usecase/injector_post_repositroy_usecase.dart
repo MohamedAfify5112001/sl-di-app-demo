@@ -14,5 +14,4 @@ final class InjectorPostRepositoryIntoPostUseCase {
         PostUseCase(postRepository: getPostRepository.postRepository);
   }
 
-  Future<List<PostEntity>> getAllPosts() async => await _postUseCase();
 }
